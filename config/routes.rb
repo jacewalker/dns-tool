@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   root 'main#index'
-  post '/', to: "main#index"
   
-  get 'main/index', to: "main#index"
-  post '/main/index', to: "main#index"
-
   post '/lookup', to: "main#lookup"
   
   # post '/lookup', to: 'main#lookup'
