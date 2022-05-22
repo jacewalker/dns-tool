@@ -1,21 +1,42 @@
-<div class="row">
-        <div class="col-4 offset-4">
-            <p> A: <%= @a %> </p>
-            <p> MX: <%= @mx %> </p>
-            <p> NS: <%= @ns %> </p>
-
-            <table>
-                <tr>
-                    <th>Domain</th>
-                    <th>Record</th> 
-                    <th>Value</th>
+<div class="container pt-3">
+    <h1 class="col-4 offset-5 w-50 fw-light">DNS Lookup</h1>
+    <div class="col-4 offset-4 p-5">
+        <table class="table table-bordered">
+            <tr>
+                <th>Domain</th>
+                <th>Record</th> 
+                <th>Value</th>
+            </tr>
+            <!-- A Record -->
+            <% @a.each do |record| %>
+                <% arr = record.to_a %>
+                <tr> 
+                    <td> <%= @domain %> </td>
+                    <td> A </td>
+                    <td> <%= arr.last %> </td>
                 </tr>
-                <tr> <!-- A Record -->
-                    <% @a.each do |record| %>
-                        <td> <%= record %> </td>
-                    <% end %>
-                </tr>
-            </table>
+            <% end %>
 
-        </div>
+            <!-- MX Record -->
+            <% @mx.each do |record| %>
+                <% arr = record.to_a %>
+                <tr> 
+                    <td> <%= @domain %> </td>
+                    <td> MX </td>
+                    <td> <%= arr.last %> </td>
+                </tr>
+            <% end %>
+
+            <!-- NS Record -->
+            <% @ns.each do |record| %>
+                <% arr = record.to_a %>
+                <tr> 
+                    <td> <%= @domain %> </td>
+                    <td> NS </td>
+                    <td> <%= arr.last %> </td>
+                </tr>
+            <% end %>
+        </table>
+        <%= link_to "Go Back", root_path, class:"btn btn-primary" %>
     </div>
+</div>

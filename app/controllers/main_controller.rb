@@ -6,16 +6,13 @@ class MainController < ApplicationController
   end
 
   def lookup
-    # domain = params[:domain]
-    # puts "I have recieved #{params[:domain]}"
+    @domain = params[:domain].downcase
+    @type = params[:type].downcase
 
-    domain = 'google.com.au' # temp override for testing
-    
-    @a = Net::DNS::Resolver.start("google.com.au").answer
-    @mx = Net::DNS::Resolver.start("google.com.au", Net::DNS::MX).answer
-    @ns = Net::DNS::Resolver.start("google.com.au", Net::DNS::NS).answer
-
-
-    # redirect_to root_path
+    @a = Net::DNS::Resolver.start(@domain).answer
+    @mx = Net::DNS::Resolver.start(@domain, Net::DNS::MX).answer
+    @ns = Net::DNS::Resolver.start(@domain, Net::DNS::NS).answer
   end
+
+
 end
