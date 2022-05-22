@@ -11,10 +11,11 @@ class MainController < ApplicationController
 
     domain = 'google.com.au' # temp override for testing
     
-    $a = Net::DNS::Resolver.start("google.com.au").answer[0]
-    $mx = Net::DNS::Resolver.start("google.com.au", Net::DNS::MX).answer
-    $ns = Net::DNS::Resolver.start("google.com.au", Net::DNS::NS).answer
+    @a = Net::DNS::Resolver.start("sybr.com.au").answer
+    @mx = Net::DNS::Resolver.start("google.com.au", Net::DNS::MX).answer
+    @ns = Net::DNS::Resolver.start("google.com.au", Net::DNS::NS).answer
 
-    redirect_to root_path
+
+    # redirect_to root_path
   end
 end

@@ -1,1 +1,21 @@
-<p>Hello everybody</p>
+<div class="row">
+        <div class="col-4 offset-4">
+            <p> A: <%= @a %> </p>
+            <p> MX: <%= @mx %> </p>
+            <p> NS: <%= @ns %> </p>
+
+            <table>
+                <tr>
+                    <th>Domain</th>
+                    <th>Record</th> 
+                    <th>Value</th>
+                </tr>
+                <tr> <!-- A Record -->
+                    <% @a.each do |record| %>
+                        <td> <%= record %> </td>
+                    <% end %>
+                </tr>
+            </table>
+
+        </div>
+    </div>
