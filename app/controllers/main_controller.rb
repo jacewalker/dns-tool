@@ -11,7 +11,7 @@ class MainController < ApplicationController
 
     domain = 'google.com.au' # temp override for testing
     
-    @a = Net::DNS::Resolver.start("sybr.com.au").answer
+    @a = Net::DNS::Resolver.start("google.com.au").answer
     @mx = Net::DNS::Resolver.start("google.com.au", Net::DNS::MX).answer
     @ns = Net::DNS::Resolver.start("google.com.au", Net::DNS::NS).answer
 
