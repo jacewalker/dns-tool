@@ -8,7 +8,7 @@
             <div class="px-5">
                 <%= form_with url: '/lookup', method: :post, local: true do |form| %>
                     <% form.label :query, "Domain Name:", class:"form-label" %>
-                    <%= form.text_field :domain, class:"form-control", placeholder: "apple.com.au", spellcheck: false %>
+                    <%= form.text_field :domain, class:"form-control", placeholder: "eg. apple.com.au", spellcheck: false %>
                     <%= form.select :type, ["All", "A", "MX", "NS"], class:"form-select form-select-sm" %>
                     <%= form.submit "Go", class: "btn btn-primary mt-3 col-4 offset-4", style: "width: 100px" %>
                 <% end %>
