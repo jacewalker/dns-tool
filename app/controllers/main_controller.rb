@@ -1,4 +1,4 @@
-require 'net/dns'
+
 
 class MainController < ApplicationController
   def index
@@ -6,8 +6,11 @@ class MainController < ApplicationController
   end
 
   def lookup
+    require 'net/dns'
     @domain = params[:domain].downcase
-    @type = params[:type].downcase
+    
+    ## Removed as :type has been hidden in lookup.html.erb
+    # @type = params[:type].downcase
 
     nameservers = [
       "8.8.8.8",
@@ -25,17 +28,28 @@ class MainController < ApplicationController
     ]
 
     @res = Net::DNS::Resolver.new
-    @res.nameservers = nameservers[rand(0..nameservers.count-1)]
 
-    @a = @res.query(@domain, Net::DNS::A, Net::DNS::IN).answer
-    @mx = @res.query(@domain, Net::DNS::MX, Net::DNS::IN).answer
-    @ns = @res.query(@domain, Net::DNS::NS, Net::DNS::IN).answer
-    @soa = @res.query(@domain, Net::DNS::SOA, Net::DNS::IN).answer
+    ## Checks if the host is alive via A Record
+    if @res.query(@domain, Net::DNS::A, Net::DNS::IN).answer.empty?
+      puts "Error: Invalid domain entry, failed A Record lookup."
+      redirect_to root_path
+    else 
+      @soa = @res.query(@domain, Net::DNS::SOA, Net::DNS::IN).answer
+      @soa.empty? ? @res.nameservers = nameservers[rand(0..nameservers.count-1)] : @res.nameservers = soaNS(@soa)
+      
+      @a = @res.query(@domain, Net::DNS::A, Net::DNS::IN).answer
+      @mx = @res.query(@domain, Net::DNS::MX, Net::DNS::IN).answer
+      @ns = @res.query(@domain, Net::DNS::NS, Net::DNS::IN).answer
+      
+      txtUnmapped = @res.query(@domain, Net::DNS::TXT, Net::DNS::IN).answer
+      txtMapped = txtUnmapped.each.map { |r| r.txt }
+      @txt = txtUnmapped.zip(txtMapped)
+    end
+  end
 
-    @txtUnmapped = @res.query(@domain, Net::DNS::TXT, Net::DNS::IN).answer
-    @txtMapped = @txtUnmapped.each.map { |r| r.txt }
-    @txt = @txtUnmapped.zip(@txtMapped)
-
+  def soaNS(soa)
+    soa[0].to_a[4].split[0] ? domain = soa[0].to_a[4].split[0] : 'google.com'
+    return ip = @res.query(domain, Net::DNS::A, Net::DNS::IN).answer[0].to_a[4]
   end
 
 
