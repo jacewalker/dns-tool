@@ -3,6 +3,7 @@
 class MainController < ApplicationController
   def index
 
+
   end
 
   def lookup
@@ -45,11 +46,23 @@ class MainController < ApplicationController
       txtMapped = txtUnmapped.each.map { |r| r.txt }
       @txt = txtUnmapped.zip(txtMapped)
     end
+    
+    @whoisData = whoisLookup(@domain)
+
   end
 
   def soaNS(soa)
     soa[0].to_a[4].split[0] ? domain = soa[0].to_a[4].split[0] : 'google.com'
     return ip = @res.query(domain, Net::DNS::A, Net::DNS::IN).answer[0].to_a[4]
+  end
+
+  def whoisLookup(domain)
+    require 'whois'
+
+    ## Warning: API Limits
+    c = Whois::Client.new
+    return c.lookup(domain).to_s.split("\r\n")
+
   end
 
 

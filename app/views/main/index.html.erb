@@ -1,8 +1,8 @@
 <div class="container-fluid pt-3">
     <div class="row">
-        <div class="col-4 offset-4">
-            <h1 class="col-4 offset-3 w-50 fw-light">DNS Lookup</h1>
-            <div class="text-muted">
+        <div class="col-4 offset-4 text-center">
+            <h1 class=" w-100 fw-light text-light">DNS Lookup</h1>
+            <div class="text-light ">
             <p class="py-1">This tool will complete a full DNS lookup on the provided domain. </p>
             </div>
             <div class="px-5">
@@ -10,7 +10,7 @@
                     <% form.label :query, "Domain Name:", class:"form-label" %>
                     <%= form.text_field :domain, class:"form-control", placeholder: "eg. apple.com.au", spellcheck: false %>
                     <% form.select :type, ["All", "A", "MX", "NS", "TXT", "SOA"], class:"form-select form-select-sm" %>
-                    <%= form.submit "Go", class: "btn btn-primary mt-3 col-4 offset-4", style: "width: 100px" %>
+                    <%= form.submit "Go", class: "btn btn-primary mt-3", style: "width: 100px" %>
                 <% end %>
             </div>
         </div>
