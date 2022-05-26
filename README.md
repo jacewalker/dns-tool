@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails application designed with Bootstrap will provide a zone lookup for the provided domain along with returning a WHOIS lookup via the Ruby Gem 'whois'.
 
-Things you may want to cover:
+This app is hosted by Heroku at https://dns.jcwlkr.io
 
-* Ruby version
+* Ruby Version 3.1.2
 
-* System dependencies
+* Gem requirements
+** net-dns
+** whois
+** whois-parser
 
-* Configuration
+* Deployment
+** rails server
 
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+** No database required
