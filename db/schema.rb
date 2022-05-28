@@ -16,6 +16,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_070709) do
 
   create_table "dns_lookups", force: :cascade do |t|
     t.string "domain"
+    t.string "aRecord"
+    t.string "mxRecord"
+    t.string "txtRecord"
+    t.string "soaRecord"
+    t.string "nsRecord"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

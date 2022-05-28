@@ -2,13 +2,12 @@
 
 class MainController < ApplicationController
   def index
-
-
   end
 
   def lookup
     require 'net/dns'
     @domain = params[:domain].downcase
+    @seenBefore = ''
     
     ## Removed as :type has been hidden in lookup.html.erb
     # @type = params[:type].downcase
@@ -49,6 +48,8 @@ class MainController < ApplicationController
     
     @whoisData = whoisLookup(@domain)
 
+    updateDNSRecordsToDatabase
+
   end
 
   def soaNS(soa)
@@ -65,5 +66,22 @@ class MainController < ApplicationController
 
   end
 
+  def updateDNSRecordsToDatabase
+
+    if DnsLookup.find_by(domain: @domain) 
+      @seenBefore = 'True'
+    else
+      @seenBefore = 'False'
+      @dnsDB = DnsLookup.new
+      @dnsDB.domain = @domain
+      @dnsDB.aRecord = @a
+      @dnsDB.mxRecord = @mx
+      @dnsDB.txtRecord = @txt
+      @dnsDB.soaRecord = @soa
+      @dnsDB.nsRecord = @ns
+      @dnsDB.save
+    end
+
+  end
 
 end

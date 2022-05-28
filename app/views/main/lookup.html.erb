@@ -1,8 +1,9 @@
 <div class="pt-3">
     <h1 class="text-center fw-light pt-2 text-light">DNS Lookup</h1>
-    <p class="text-center text-light">
-        DNS query for <%= @domain %> returned from server: <%= @res.nameservers[0].to_s %> 
-    </p>
+    <div class="text-center text-light">
+        <p>DNS query for <%= @domain %> returned from server: <%= @res.nameservers[0].to_s %> </p>
+        <p>Have we seen this domain before? <%= @seenBefore %></p>
+    </div>
 
     <div class="col-10 offset-1 table-responsive position-relative">
         <table class="table align-middle table-dark table-bordered table-hover">

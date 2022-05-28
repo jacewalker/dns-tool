@@ -420,3 +420,966 @@ Processing by MainController#index as HTML
 Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 4862)
 
 
+Started GET "/" for 127.0.0.1 at 2022-05-28 10:25:47 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 3329)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 35209)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 38400)
+
+
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "dns_db" ENCODING = 'utf8'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "dns_db" ENCODING = 'utf8'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6369594892261014015)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6369594892261014015)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6369594892261014015)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDnsLookups (20220521070709)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.3ms)[0m  [1m[35mDROP TABLE "dns_lookups"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220521070709"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6369594892261014015)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6369594892261014015)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDnsLookups (20220521070709)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.9ms)[0m  [1m[35mCREATE TABLE "dns_lookups" ("id" bigserial primary key, "domain" character varying, "aRecord" character varying, "mxRecord" character varying, "txtRecord" character varying, "soaRecord" character varying, "nsRecord" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220521070709"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6369594892261014015)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:00:53 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 2265)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 16661)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 17299)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:00:59 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:77:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (1.0ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"], [apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"]]"], ["soaRecord", "[apple.com.au.           86400   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      c.ns.apple.com., apple.com.au.           86400   IN      NS      b.ns.apple.com., apple.com.au.           86400   IN      NS      a.ns.apple.com., apple.com.au.           86400   IN      NS      d.ns.apple.com.]"], ["created_at", "2022-05-28 01:01:01.817244"], ["updated_at", "2022-05-28 01:01:01.817244"]]
+  ↳ app/controllers/main_controller.rb:77:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:77:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1118)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3325)
+Completed 200 OK in 1875ms (Views: 5.8ms | ActiveRecord: 12.6ms | Allocations: 20817)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:07:02 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:78:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (1.4ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"], [apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"]]"], ["soaRecord", "[apple.com.au.           86400   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      a.ns.apple.com., apple.com.au.           86400   IN      NS      c.ns.apple.com., apple.com.au.           86400   IN      NS      b.ns.apple.com., apple.com.au.           86400   IN      NS      d.ns.apple.com.]"], ["created_at", "2022-05-28 01:07:04.299157"], ["updated_at", "2022-05-28 01:07:04.299157"]]
+  ↳ app/controllers/main_controller.rb:78:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:78:in `updateDNSRecordsToDatabase'
+Completed 500 Internal Server Error in 1340ms (ActiveRecord: 2.9ms | Allocations: 15698)
+
+
+  
+NameError (undefined local variable or method `dnsDB' for #<MainController:0x000000000118c8>
+
+    @seenBefore = dnsDB.where(@domain).passed.exists?
+                  ^^^^^):
+  
+app/controllers/main_controller.rb:51:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:08:10 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:72: syntax error, unexpected string literal, expecting `end'
+...nBefore = 'Yes' : @seenBefore 'No'
+...                              ^
+):
+  
+app/controllers/main_controller.rb:72: syntax error, unexpected string literal, expecting `end'
+app/controllers/main_controller.rb:72: syntax error, unexpected string literal, expecting `end'
+app/controllers/main_controller.rb:72: syntax error, unexpected string literal, expecting `end'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:08:36 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:75: syntax error, unexpected string literal, expecting `end'
+      @seenBefore 'No'
+                  ^
+):
+  
+app/controllers/main_controller.rb:75: syntax error, unexpected string literal, expecting `end'
+app/controllers/main_controller.rb:75: syntax error, unexpected string literal, expecting `end'
+app/controllers/main_controller.rb:75: syntax error, unexpected string literal, expecting `end'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:08:47 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:72: syntax error, unexpected ':', expecting `then' or ';' or '\n'
+...d.exists? @seenBefore = 'Yes' : @seenBefore = 'No'
+...                              ^
+):
+  
+app/controllers/main_controller.rb:72: syntax error, unexpected ':', expecting `then' or ';' or '\n'
+app/controllers/main_controller.rb:72: syntax error, unexpected ':', expecting `then' or ';' or '\n'
+app/controllers/main_controller.rb:72: syntax error, unexpected ':', expecting `then' or ';' or '\n'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:09:01 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:83: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/main_controller.rb:83: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/main_controller.rb:83: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/main_controller.rb:83: syntax error, unexpected end-of-input, expecting `end'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:09:16 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+Completed 500 Internal Server Error in 5224ms (ActiveRecord: 0.0ms | Allocations: 13089)
+
+
+  
+NameError (uninitialized constant Net::DNS::Resolver::TimeoutError
+
+          rescue TimeoutError
+                 ^^^^^^^^^^^^):
+  
+app/controllers/main_controller.rb:41:in `lookup'
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:09:37 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2531)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 17124)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 17958)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:09:39 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.a", "commit"=>"Go"}
+Redirected to http://127.0.0.1:3000/
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 0.0ms | Allocations: 1719)
+
+
+  
+Whois::ServerNotFound (Unable to find a WHOIS server for `apple.com.a'):
+  
+app/controllers/main_controller.rb:65:in `whoisLookup'
+app/controllers/main_controller.rb:49:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:09:43 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+Completed 500 Internal Server Error in 811ms (ActiveRecord: 7.9ms | Allocations: 21516)
+
+
+  
+NoMethodError (undefined method `where' for #<DnsLookup id: nil, domain: nil, aRecord: nil, mxRecord: nil, txtRecord: nil, soaRecord: nil, nsRecord: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+app/controllers/main_controller.rb:51:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:10:31 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+Completed 500 Internal Server Error in 806ms (ActiveRecord: 6.9ms | Allocations: 11986)
+
+
+  
+NoMethodError (undefined method `where' for nil:NilClass
+
+    dnsDB.domain.where(@domain).passed.exists? ? @seenBefore = 'Yes' : @seenBefore = 'No'
+                ^^^^^^):
+  
+app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+app/controllers/main_controller.rb:51:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:12:43 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+Completed 500 Internal Server Error in 797ms (ActiveRecord: 8.6ms | Allocations: 15139)
+
+
+  
+NoMethodError (undefined method `exists?' for #<DnsLookup id: nil, domain: nil, aRecord: nil, mxRecord: nil, txtRecord: nil, soaRecord: nil, nsRecord: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+app/controllers/main_controller.rb:51:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:13:21 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+Completed 500 Internal Server Error in 803ms (ActiveRecord: 7.2ms | Allocations: 15130)
+
+
+  
+NoMethodError (undefined method `where' for #<DnsLookup id: nil, domain: nil, aRecord: nil, mxRecord: nil, txtRecord: nil, soaRecord: nil, nsRecord: nil, created_at: nil, updated_at: nil>):
+  
+app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+app/controllers/main_controller.rb:51:in `lookup'
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:13:54 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 2253)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 16683)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 17317)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:15:16 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 4786)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 4880)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 5803)
+
+
+  
+ActionView::Template::Error (undefined method `domain' for nil:NilClass
+
+'.freeze;             @dnsDB.domain.each do | domain | 
+                            ^^^^^^^):
+    17: 
+    18:         <div>
+    19:         <p class="text-center">
+    20:             <% @dnsDB.domain.each do | domain | %>
+    21:             <%= puts domain %>
+    22:             <% end %>
+    23:         </p>
+  
+app/views/main/index.html.erb:20
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:15:24 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 4787)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4881)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 5675)
+
+
+  
+ActionView::Template::Error (undefined method `domains' for nil:NilClass
+
+'.freeze;             @dnsDB.domains.each do | domain | 
+                            ^^^^^^^^):
+    17: 
+    18:         <div>
+    19:         <p class="text-center">
+    20:             <% @dnsDB.domains.each do | domain | %>
+    21:             <%= puts domain %>
+    22:             <% end %>
+    23:         </p>
+  
+app/views/main/index.html.erb:20
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:15:54 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 4782)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4876)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 5671)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;             @dnsDB.each do | domain | 
+                            ^^^^^):
+    17: 
+    18:         <div>
+    19:         <p class="text-center">
+    20:             <% @dnsDB.each do | domain | %>
+    21:             <%= puts domain %>
+    22:             <% end %>
+    23:         </p>
+  
+app/views/main/index.html.erb:20
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:15:59 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1334)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1429)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2228)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container-fluid pt-3">
+    <div class="row pt-5">
+        <div class="col-6 offset-3 text-center p-5 border border-1 border-secondary border-opacity-50">
+            <h1 class=" w-100 fw-light text-light">DNS Lookup</h1>
+            <div class="text-light ">
+            <p class="py-1">This tool will complete a full DNS lookup on the provided domain. </p>
+            </div>
+            <div class="px-5">
+                <%= form_with url: '/lookup', method: :post, local: true do |form| %>
+                    <% form.label :query, "Domain Name:", class:"form-label" %>
+                    <%= form.text_field :domain, class:"form-control", placeholder: "eg. apple.com.au", spellcheck: false %>
+                    <% form.select :type, ["All", "A", "MX", "NS", "TXT", "SOA"], class:"form-select form-select-sm" %>
+                    <%= form.submit "Go", class: "btn btn-primary mt-3", style: "width: 100px" %>
+                <% end %>
+            </div>
+        </div>
+
+        <div>
+        <p class="text-center">
+            <% @dnsDB do | domain | %>
+            <%= puts domain %>
+            <% end %>
+        </p>
+        
+        </div>
+
+    </div>
+</div>
+
+):
+1:    <div class="container-fluid pt-3">
+2:        <div class="row pt-5">
+3:            <div class="col-6 offset-3 text-center p-5 border border-1 border-secondary border-opacity-50">
+4:                <h1 class=" w-100 fw-light text-light">DNS Lookup</h1>
+5:                <div class="text-light ">
+6:                <p class="py-1">This tool will complete a full DNS lookup on the provided domain. </p>
+7:                </div>
+8:                <div class="px-5">
+9:                    <%= form_with url: '/lookup', method: :post, local: true do |form| %>
+10:                        <% form.label :query, "Domain Name:", class:"form-label" %>
+11:                        <%= form.text_field :domain, class:"form-control", placeholder: "eg. apple.com.au", spellcheck: false %>
+12:                        <% form.select :type, ["All", "A", "MX", "NS", "TXT", "SOA"], class:"form-select form-select-sm" %>
+13:                        <%= form.submit "Go", class: "btn btn-primary mt-3", style: "width: 100px" %>
+14:                    <% end %>
+15:                </div>
+16:            </div>
+17:    
+18:            <div>
+19:            <p class="text-center">
+20:                <% @dnsDB do | domain | %>
+21:                <%= puts domain %>
+22:                <% end %>
+23:            </p>
+24:            
+25:            </div>
+26:    
+27:        </div>
+28:    </div>
+  
+app/views/main/index.html.erb:20: syntax error, unexpected `do', expecting `end'
+app/views/main/index.html.erb:31: syntax error, unexpected `end', expecting end-of-input
+app/views/main/index.html.erb:20: syntax error, unexpected `do', expecting `end'
+app/views/main/index.html.erb:31: syntax error, unexpected `end', expecting end-of-input
+app/views/main/index.html.erb:20: syntax error, unexpected `do', expecting `end'
+app/views/main/index.html.erb:31: syntax error, unexpected `end', expecting end-of-input
+app/views/main/index.html.erb:20: syntax error, unexpected `do', expecting `end'
+app/views/main/index.html.erb:31: syntax error, unexpected `end', expecting end-of-input
+app/views/main/index.html.erb:20: syntax error, unexpected `do', expecting `end'
+app/views/main/index.html.erb:31: syntax error, unexpected `end', expecting end-of-input
+app/views/main/index.html.erb:20: syntax error, unexpected `do', expecting `end'
+app/views/main/index.html.erb:31: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:16:09 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 2547)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 17141)
+Completed 200 OK in 13ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 17978)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:16:10 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2094)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4178)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4459)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:16:17 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2554)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 5019)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 5832)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:16:23 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 4772)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4866)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 5667)
+
+
+  
+ActionView::Template::Error (undefined method `all' for nil:NilClass
+
+            '.freeze;@output_buffer.append=( @dnsDB.all );@output_buffer.safe_append='
+                                                   ^^^^):
+    17: 
+    18:         <div>
+    19:         <p class="text-center text-light">
+    20:             <%= @dnsDB.all %>
+    21:         </p>
+    22:         
+    23:         </div>
+  
+app/views/main/index.html.erb:20
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:16:27 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4773)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 4867)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 5662)
+
+
+  
+ActionView::Template::Error (undefined method `All' for nil:NilClass
+
+            '.freeze;@output_buffer.append=( @dnsDB.All );@output_buffer.safe_append='
+                                                   ^^^^):
+    17: 
+    18:         <div>
+    19:         <p class="text-center text-light">
+    20:             <%= @dnsDB.All %>
+    21:         </p>
+    22:         
+    23:         </div>
+  
+app/views/main/index.html.erb:20
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:19:03 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5877)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5971)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 6766)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x000000010afd85a8>::DNSLookup
+
+'.freeze;             records = DNSLookup.where(domain: 1) 
+                                ^^^^^^^^^):
+    17: 
+    18:         <div>
+    19:         <p class="text-center text-light">
+    20:             <% records = DNSLookup.where(domain: 1) %>
+    21:             <% records %>
+    22:         </p>
+    23:         
+  
+app/views/main/index.html.erb:20
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:26:08 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2498)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 17091)
+Completed 200 OK in 12ms (Views: 11.2ms | Allocations: 18034)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:26:11 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (1.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:81:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (1.0ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"], [apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"]]"], ["soaRecord", "[apple.com.au.           85252   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      a.ns.apple.com., apple.com.au.           86400   IN      NS      b.ns.apple.com., apple.com.au.           86400   IN      NS      c.ns.apple.com., apple.com.au.           86400   IN      NS      d.ns.apple.com.]"], ["created_at", "2022-05-28 01:26:12.130020"], ["updated_at", "2022-05-28 01:26:12.130020"]]
+  ↳ app/controllers/main_controller.rb:81:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:81:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1069)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3263)
+Completed 200 OK in 878ms (Views: 10.1ms | ActiveRecord: 23.6ms | Allocations: 20518)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:27:48 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.3ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:81:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (0.6ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"], [apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"]]"], ["soaRecord", "[apple.com.au.           84792   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      b.ns.apple.com., apple.com.au.           86400   IN      NS      a.ns.apple.com., apple.com.au.           86400   IN      NS      c.ns.apple.com., apple.com.au.           86400   IN      NS      d.ns.apple.com.]"], ["created_at", "2022-05-28 01:27:49.482382"], ["updated_at", "2022-05-28 01:27:49.482382"]]
+  ↳ app/controllers/main_controller.rb:81:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:81:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 1.3ms | Allocations: 330)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 14774)
+Completed 200 OK in 839ms (Views: 21.2ms | ActiveRecord: 9.2ms | Allocations: 28690)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:28:35 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...ains.domain == @domain ? puts 'It already exists' : puts 'No...
+...                              ^
+/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+...in ? puts 'It already exists' : puts 'Not here yet!'
+...                              ^
+):
+  
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:29:52 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...ins.domain === @domain ? puts 'It already exists' : puts 'No...
+...                              ^
+/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+...in ? puts 'It already exists' : puts 'Not here yet!'
+...                              ^
+):
+  
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:30:23 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+...n.to_s == @domain.to_s ? puts 'It already exists' : puts 'No...
+...                              ^
+/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+..._s ? puts 'It already exists' : puts 'Not here yet!'
+...                              ^
+):
+  
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+app/controllers/main_controller.rb:73: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/main_controller.rb:73: syntax error, unexpected ':', expecting `end'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:31:06 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.4ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (2.4ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"], [apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"]]"], ["soaRecord", "[apple.com.au.           84957   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      d.ns.apple.com., apple.com.au.           86400   IN      NS      a.ns.apple.com., apple.com.au.           86400   IN      NS      c.ns.apple.com., apple.com.au.           86400   IN      NS      b.ns.apple.com.]"], ["created_at", "2022-05-28 01:31:07.139043"], ["updated_at", "2022-05-28 01:31:07.139043"]]
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 1.1ms | Allocations: 330)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 14773)
+Completed 200 OK in 941ms (Views: 24.6ms | ActiveRecord: 10.5ms | Allocations: 28710)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:32:42 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.4ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (0.6ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"], [apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"]]"], ["soaRecord", "[apple.com.au.           84498   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      b.ns.apple.com., apple.com.au.           86400   IN      NS      c.ns.apple.com., apple.com.au.           86400   IN      NS      d.ns.apple.com., apple.com.au.           86400   IN      NS      a.ns.apple.com.]"], ["created_at", "2022-05-28 01:32:43.903922"], ["updated_at", "2022-05-28 01:32:43.903922"]]
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1100)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 15742)
+Completed 200 OK in 1718ms (Views: 27.0ms | ActiveRecord: 8.9ms | Allocations: 29954)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:33:41 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.8ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (0.6ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"], [apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"]]"], ["soaRecord", "[apple.com.au.           84439   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      d.ns.apple.com., apple.com.au.           86400   IN      NS      a.ns.apple.com., apple.com.au.           86400   IN      NS      c.ns.apple.com., apple.com.au.           86400   IN      NS      b.ns.apple.com.]"], ["created_at", "2022-05-28 01:33:42.368899"], ["updated_at", "2022-05-28 01:33:42.368899"]]
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1084)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3557)
+Completed 200 OK in 830ms (Views: 12.0ms | ActiveRecord: 2.5ms | Allocations: 14253)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:33:49 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2460)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4545)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4881)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:33:51 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.6ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:72:in `updateDNSRecordsToDatabase'
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.6ms | Allocations: 7786)
+
+
+  
+NoMethodError (undefined method `domain' for nil:NilClass
+
+    if existingDomains.domain == @domain
+                      ^^^^^^^):
+  
+app/controllers/main_controller.rb:73:in `updateDNSRecordsToDatabase'
+app/controllers/main_controller.rb:51:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:34:18 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:80: syntax error, unexpected instance variable, expecting ':'
+    @dnsDB.domain = @domain
+    ^~~~~~
+):
+  
+app/controllers/main_controller.rb:80: syntax error, unexpected instance variable, expecting ':'
+app/controllers/main_controller.rb:80: syntax error, unexpected instance variable, expecting ':'
+app/controllers/main_controller.rb:80: syntax error, unexpected instance variable, expecting ':'
+Started POST "/__web_console/repl_sessions/e397e34031f24d503fc6f24b1d576186/trace" for 127.0.0.1 at 2022-05-28 11:35:06 +1000
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:35:09 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.3ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:73:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (0.5ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "sybr.com.au"], ["aRecord", "[sybr.com.au.            300     IN      A       104.21.16.16, sybr.com.au.            300     IN      A       172.67.209.197]"], ["mxRecord", "[sybr.com.au.            7200    IN      MX      0 sybr-com-au.mail.protection.outlook.com.]"], ["txtRecord", "[[sybr.com.au.            300     IN      TXT     , \"v=spf1 include:spf.protection.outlook.com include:mailgun.org include:spf.synergywholesale.com -all \"], [sybr.com.au.            300     IN      TXT     , \"MS=ms51963981 \"], [sybr.com.au.            300     IN      TXT     , \"ca3-96ce17fbce76437f8985577e2e7e3c2f \"], [sybr.com.au.            300     IN      TXT     , \"stripe-verification=b99d5d78ec0d742d9a861c26251a6386e22a8ec590709706c938ddc407fe7957 \"]]"], ["soaRecord", "[sybr.com.au.            3600    IN      SOA     ken.ns.cloudflare.com. dns.cloudflare.com. 2278465919 10000 2400 604800 3600]"], ["nsRecord", "[sybr.com.au.            86400   IN      NS      ken.ns.cloudflare.com., sybr.com.au.            86400   IN      NS      yolanda.ns.cloudflare.com.]"], ["created_at", "2022-05-28 01:35:09.300912"], ["updated_at", "2022-05-28 01:35:09.300912"]]
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:86:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.8ms | Allocations: 259)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 14744)
+Completed 200 OK in 135ms (Views: 17.0ms | ActiveRecord: 5.3ms | Allocations: 26917)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:35:13 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4267)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 4549)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:35:15 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:73:in `updateDNSRecordsToDatabase'
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.5ms | Allocations: 7859)
+
+
+  
+NoMethodError (undefined method `domain' for nil:NilClass
+
+    if existingDomains = DnsLookup.find_by(domain: @domain) && existingDomains.domain == @domain
+                                                                              ^^^^^^^):
+  
+app/controllers/main_controller.rb:73:in `updateDNSRecordsToDatabase'
+app/controllers/main_controller.rb:51:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:36:07 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.2ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:73:in `updateDNSRecordsToDatabase'
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 6.0ms | Allocations: 11211)
+
+
+  
+NoMethodError (undefined method `domain' for nil:NilClass
+
+      if existingDomains.domain == @domain
+                        ^^^^^^^):
+  
+app/controllers/main_controller.rb:74:in `updateDNSRecordsToDatabase'
+app/controllers/main_controller.rb:51:in `lookup'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:36:44 +1000
+  
+SyntaxError (/Users/jace/Code/Rails/dns-tool/app/controllers/main_controller.rb:83: syntax error, unexpected instance variable, expecting ':'
+    @dnsDB.domain = @domain
+    ^~~~~~
+):
+  
+app/controllers/main_controller.rb:83: syntax error, unexpected instance variable, expecting ':'
+app/controllers/main_controller.rb:83: syntax error, unexpected instance variable, expecting ':'
+app/controllers/main_controller.rb:83: syntax error, unexpected instance variable, expecting ':'
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:38:18 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.3ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (0.6ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "sybr.com.au"], ["aRecord", "[sybr.com.au.            300     IN      A       172.67.209.197, sybr.com.au.            300     IN      A       104.21.16.16]"], ["mxRecord", "[sybr.com.au.            7200    IN      MX      0 sybr-com-au.mail.protection.outlook.com.]"], ["txtRecord", "[[sybr.com.au.            300     IN      TXT     , \"v=spf1 include:spf.protection.outlook.com include:mailgun.org include:spf.synergywholesale.com -all \"], [sybr.com.au.            300     IN      TXT     , \"MS=ms51963981 \"], [sybr.com.au.            300     IN      TXT     , \"ca3-96ce17fbce76437f8985577e2e7e3c2f \"], [sybr.com.au.            300     IN      TXT     , \"stripe-verification=b99d5d78ec0d742d9a861c26251a6386e22a8ec590709706c938ddc407fe7957 \"]]"], ["soaRecord", "[sybr.com.au.            3333    IN      SOA     ken.ns.cloudflare.com. dns.cloudflare.com. 2278465919 10000 2400 604800 3600]"], ["nsRecord", "[sybr.com.au.            86400   IN      NS      ken.ns.cloudflare.com., sybr.com.au.            86400   IN      NS      yolanda.ns.cloudflare.com.]"], ["created_at", "2022-05-28 01:38:18.858959"], ["updated_at", "2022-05-28 01:38:18.858959"]]
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.6ms | Allocations: 259)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 14743)
+Completed 200 OK in 322ms (Views: 21.8ms | ActiveRecord: 7.7ms | Allocations: 26944)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:38:21 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2206)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4291)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4573)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:38:24 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (1.0ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "apple.com.au"], ["aRecord", "[apple.com.au.           600     IN      A       17.253.144.10]"], ["mxRecord", "[apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp35.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp34.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp25.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp24.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp15.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp14.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp03.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp02.apple.com., apple.com.au.           3600    IN      MX      10 ma1-aaemail-dr-lapp01.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp45.apple.com., apple.com.au.           3600    IN      MX      10 rn-mailsvcp-ppex-lapp44.apple.com.]"], ["txtRecord", "[[apple.com.au.           3600    IN      TXT     , \"v=spf1 -all \"], [apple.com.au.           3600    IN      TXT     , \"qgh11p0gw0sbcl2f113cq9ctsvw382b3 \"]]"], ["soaRecord", "[apple.com.au.           84156   IN      SOA     usmsc2-extxfr-001.dns.apple.com. hostmaster.apple.com. 2012013195 7200 1800 2592000 1800]"], ["nsRecord", "[apple.com.au.           86400   IN      NS      d.ns.apple.com., apple.com.au.           86400   IN      NS      b.ns.apple.com., apple.com.au.           86400   IN      NS      a.ns.apple.com., apple.com.au.           86400   IN      NS      c.ns.apple.com.]"], ["created_at", "2022-05-28 01:38:25.535358"], ["updated_at", "2022-05-28 01:38:25.535358"]]
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 1.5ms | Allocations: 268)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 2352)
+Completed 200 OK in 1203ms (Views: 24.3ms | ActiveRecord: 2.2ms | Allocations: 12417)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:38:31 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"gardnr.dev", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "gardnr.dev"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (0.5ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "gardnr.dev"], ["aRecord", "[gardnr.dev.             300     IN      A       104.21.39.190, gardnr.dev.             300     IN      A       172.67.148.86]"], ["mxRecord", "[gardnr.dev.             3600    IN      MX      0 mail.gardnr.dev.]"], ["txtRecord", "[[gardnr.dev.             300     IN      TXT     , \"MS=ms79210733 \"], [gardnr.dev.             300     IN      TXT     , \"v=spf1 ip4:139.180.180.179 ip4:119.18.16.114 ~all \"]]"], ["soaRecord", "[gardnr.dev.             3600    IN      SOA     clarissa.ns.cloudflare.com. dns.cloudflare.com. 2279051369 10000 2400 604800 3600]"], ["nsRecord", "[gardnr.dev.             86400   IN      NS      clarissa.ns.cloudflare.com., gardnr.dev.             86400   IN      NS      trace.ns.cloudflare.com.]"], ["created_at", "2022-05-28 01:38:32.465447"], ["updated_at", "2022-05-28 01:38:32.465447"]]
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:84:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 1.3ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2364)
+Completed 200 OK in 1431ms (Views: 7.9ms | ActiveRecord: 2.5ms | Allocations: 10031)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:42:23 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"gardnr.dev", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.3ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "gardnr.dev"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.9ms | Allocations: 346)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 14825)
+Completed 200 OK in 645ms (Views: 25.0ms | ActiveRecord: 7.3ms | Allocations: 24532)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:42:26 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2191)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4280)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 4562)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:42:28 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"gardnr.dev", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "gardnr.dev"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.5ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2364)
+Completed 200 OK in 558ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 8382)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:42:31 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2116)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4200)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4462)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:42:33 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"gardnr.dev", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.4ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "gardnr.dev"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.7ms | Allocations: 283)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2372)
+Completed 200 OK in 602ms (Views: 23.6ms | ActiveRecord: 0.4ms | Allocations: 8154)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:43:14 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 2256)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 16667)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 17299)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:43:16 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.9ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2448)
+Completed 200 OK in 455ms (Views: 8.9ms | ActiveRecord: 7.8ms | Allocations: 12131)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:43:41 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.2ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/main_controller.rb:82:in `updateDNSRecordsToDatabase'
+  [1m[36mDnsLookup Create (0.3ms)[0m  [1m[32mINSERT INTO "dns_lookups" ("domain", "aRecord", "mxRecord", "txtRecord", "soaRecord", "nsRecord", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["domain", "sybr.com.au"], ["aRecord", "[sybr.com.au.            300     IN      A       172.67.209.197, sybr.com.au.            300     IN      A       104.21.16.16]"], ["mxRecord", "[sybr.com.au.            7200    IN      MX      0 sybr-com-au.mail.protection.outlook.com.]"], ["txtRecord", "[[sybr.com.au.            300     IN      TXT     , \"v=spf1 include:spf.protection.outlook.com include:mailgun.org include:spf.synergywholesale.com -all \"], [sybr.com.au.            300     IN      TXT     , \"MS=ms51963981 \"], [sybr.com.au.            300     IN      TXT     , \"ca3-96ce17fbce76437f8985577e2e7e3c2f \"], [sybr.com.au.            300     IN      TXT     , \"stripe-verification=b99d5d78ec0d742d9a861c26251a6386e22a8ec590709706c938ddc407fe7957 \"]]"], ["soaRecord", "[sybr.com.au.            3088    IN      SOA     ken.ns.cloudflare.com. dns.cloudflare.com. 2278465919 10000 2400 604800 3600]"], ["nsRecord", "[sybr.com.au.            86400   IN      NS      ken.ns.cloudflare.com., sybr.com.au.            86400   IN      NS      yolanda.ns.cloudflare.com.]"], ["created_at", "2022-05-28 01:43:41.308799"], ["updated_at", "2022-05-28 01:43:41.308799"]]
+  ↳ app/controllers/main_controller.rb:82:in `updateDNSRecordsToDatabase'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/main_controller.rb:82:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.2ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2277)
+Completed 200 OK in 282ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 10688)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:43:43 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 11.5ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 2272)
+Completed 200 OK in 336ms (Views: 34.9ms | ActiveRecord: 0.5ms | Allocations: 8365)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:43:48 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.4ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.8ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2241)
+Completed 200 OK in 343ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 8326)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:43:50 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.8ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2228)
+Completed 200 OK in 207ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 8310)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:43:52 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.6ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2228)
+Completed 200 OK in 120ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 8325)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 11:43:53 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 0.7ms | Allocations: 152)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2228)
+Completed 200 OK in 194ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 8310)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-28 11:45:10 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 2229)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 16623)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 17256)
+
+
