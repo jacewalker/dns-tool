@@ -69,7 +69,7 @@ class MainController < ApplicationController
     if DnsLookup.find_by(domain: @domain) 
       @seenBefore = 'True'
     else
-      @seenBefore = 'False'
+      @seenBefore = 'Falsee'
       @dnsDB = DnsLookup.new
       @dnsDB.domain = @domain
       @dnsDB.aRecord = @a
