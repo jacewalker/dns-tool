@@ -49,7 +49,6 @@ class MainController < ApplicationController
     @whoisData = whoisLookup(@domain)
 
     updateDNSRecordsToDatabase
-
   end
 
   def soaNS(soa)
@@ -67,7 +66,6 @@ class MainController < ApplicationController
   end
 
   def updateDNSRecordsToDatabase
-
     if DnsLookup.find_by(domain: @domain) 
       @seenBefore = 'True'
     else
@@ -81,7 +79,6 @@ class MainController < ApplicationController
       @dnsDB.nsRecord = @ns
       @dnsDB.save
     end
-
   end
 
 end

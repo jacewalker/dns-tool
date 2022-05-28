@@ -1383,3 +1383,27 @@ Importmap skipped missing path: turbo.min.js
 Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 17256)
 
 
+Started GET "/" for 127.0.0.1 at 2022-05-28 12:03:10 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3486)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 35086)
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 38277)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-28 12:03:13 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (1.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:69:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1058)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3268)
+Completed 200 OK in 813ms (Views: 4.5ms | ActiveRecord: 10.3ms | Allocations: 18028)
+
+
