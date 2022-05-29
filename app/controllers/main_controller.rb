@@ -31,8 +31,8 @@ class MainController < ApplicationController
 
     ## Checks if the host is alive via A Record
     if @res.query(@domain, Net::DNS::A, Net::DNS::IN).answer.empty?
-      puts "Error: Invalid domain entry, failed A Record lookup."
-      redirect_to root_path
+      "Error: Invalid domain entry, failed A Record lookup."
+      redirect_to root_path, alert: "Domain not found, please try again."
     else 
       @soa = @res.query(@domain, Net::DNS::SOA, Net::DNS::IN).answer
       @soa.empty? ? @res.nameservers = nameservers[rand(0..nameservers.count-1)] : @res.nameservers = soaNS(@soa)
@@ -44,11 +44,10 @@ class MainController < ApplicationController
       txtUnmapped = @res.query(@domain, Net::DNS::TXT, Net::DNS::IN).answer
       txtMapped = txtUnmapped.each.map { |r| r.txt }
       @txt = txtUnmapped.zip(txtMapped)
+      @whoisData = whoisLookup(@domain)
+      updateDNSRecordsToDatabase
     end
     
-    @whoisData = whoisLookup(@domain)
-
-    updateDNSRecordsToDatabase
   end
 
   def soaNS(soa)
@@ -68,6 +67,14 @@ class MainController < ApplicationController
   def updateDNSRecordsToDatabase
     if DnsLookup.find_by(domain: @domain) 
       @seenBefore = 'True'
+      @dnsDB = DnsLookup.new
+      lastSeen = DnsLookup.find_by(domain: @domain)
+      @dnsDB.aRecord = @a unless lastSeen.aRecord == @a
+      @dnsDB.mxRecord = @mx unless lastSeen.mxRecord == @mx
+      @dnsDB.txtRecord = @txt unless lastSeen.txtRecord == @txt
+      @dnsDB.soaRecord = @soa unless lastSeen.soaRecord == @soa
+      @dnsDB.nsRecord = @ns unless lastSeen.nsRecord == @ns
+      @dnsDB.save
     else
       @seenBefore = 'False'
       @dnsDB = DnsLookup.new
@@ -79,6 +86,11 @@ class MainController < ApplicationController
       @dnsDB.nsRecord = @ns
       @dnsDB.save
     end
+
+    
+
+
+
   end
 
 end
