@@ -4937,6 +4937,7 @@ Processing by MainController#lookup as HTML
 Completed 200 OK in 919ms (Views: 10.4ms | ActiveRecord: 30.0ms | Allocations: 17778)
 
 
+<<<<<<< Updated upstream
 Started POST "/lookup" for 127.0.0.1 at 2022-05-29 18:51:00 +1000
 Processing by MainController#lookup as HTML
   Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
@@ -6633,11 +6634,30 @@ Started POST "/lookup" for 127.0.0.1 at 2022-05-29 20:22:40 +1000
 Processing by MainController#lookup as HTML
   Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
   [1m[36mDnsLookup Load (0.3ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+=======
+Started GET "/" for 127.0.0.1 at 2022-05-29 20:27:30 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3587)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 41119)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 0.0ms | Allocations: 44310)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-05-29 20:27:34 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"sybr.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (0.5ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
+>>>>>>> Stashed changes
   ↳ app/controllers/main_controller.rb:68:in `updateDNSRecordsToDatabase'
   [1m[36mCACHE DnsLookup Load (0.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "sybr.com.au"], ["LIMIT", 1]]
   ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
   Rendering layout layouts/application.html.erb
   Rendering main/lookup.html.erb within layouts/application
+<<<<<<< Updated upstream
   Rendered main/lookup.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1153)
   Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3626)
 Completed 200 OK in 123ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 11519)
@@ -6723,5 +6743,10 @@ Processing by MainController#index as HTML
   Rendered main/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2514)
   Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4599)
 Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4933)
+=======
+  Rendered main/lookup.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1057)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3263)
+Completed 200 OK in 146ms (Views: 5.5ms | ActiveRecord: 5.4ms | Allocations: 19324)
+>>>>>>> Stashed changes
 
 
