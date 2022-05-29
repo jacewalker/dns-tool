@@ -70,7 +70,7 @@
         
         <div class="mb-5">
             <%= link_to "Go Back", root_path, class:"btn btn-primary float-start" %>
-            <%= button_to "Historic DNS", show_historical_whois_path, method: 'get', class:"btn btn-primary float-end" %>
+            <% button_to "Historic DNS", show_historical_whois_path, method: 'get', class:"btn btn-primary float-end" %>
         </div>
 
         <div class="row">
@@ -88,8 +88,7 @@
                     </table>
                 </div>
             </div>
-        <% if @show_history_whois %>
-            <div class="col-6">
+            <%# <div class="col-6">
                 <div class="mt-5">
                     <table class="table align-middle table-dark table-bordered table-hover table-sm">
                         <tr>
@@ -97,8 +96,7 @@
                         </tr>
                     </table>
                 </div>
-            </div>
-        <% end %>
+            </div> %>
         </div>
     </div>
 </div>
