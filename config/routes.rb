@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'main#index'
   
   post '/lookup', to: "main#lookup"
+  get '/show_historical_whois', to: "main#show_historical_whois"
   
   # post '/lookup', to: 'main#lookup'
   # get '/lookup', to: 'main#index'

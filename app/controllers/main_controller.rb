@@ -93,4 +93,9 @@ class MainController < ApplicationController
 
   end
 
+  def show_historical_whois
+    @show_history_whois = true
+    puts @show_history_whois
+  end
+
 end

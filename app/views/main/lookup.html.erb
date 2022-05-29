@@ -1,11 +1,11 @@
-<div class="pt-3">
+<div class="mt-3">
     <h1 class="text-center fw-light pt-2 text-light">DNS Lookup</h1>
     <div class="text-center text-light">
         <p>DNS query for <%= @domain %> returned from server: <%= @res.nameservers[0].to_s %> </p>
         <p>Have we seen this domain before? <%= @seenBefore %></p>
     </div>
 
-    <div class="col-10 offset-1 table-responsive position-relative">
+    <div class="col-10 offset-1">
         <table class="table align-middle table-dark table-bordered table-hover">
             <tr>
                 <th>Domain</th>
@@ -68,26 +68,37 @@
             <% end %>
         </table>
         
-        <div class="mx-3">
+        <div class="mb-5">
             <%= link_to "Go Back", root_path, class:"btn btn-primary float-start" %>
-            <button class="btn btn-primary float-end" >Historic DNS</button> 
+            <%= button_to "Historic DNS", show_historical_whois_path, method: 'get', class:"btn btn-primary float-end" %>
         </div>
-        
 
-        <div class="col-10 offset-0">
-            <table class="table table-dark table-sm table-hover mt-5 w-75">
-                <tr>
-                    <th> WHOIS Data </th>
-                </tr>
-
-                <% @whoisData.each do |record| %>
-                    <tr> 
-                        <td> <%= record %> </td>
-                    </tr>
-                <% end %>
-
-            </table>
+        <div class="row">
+            <div class="col-6">
+                <div class="mt-5">
+                    <table class="table align-middle table-dark table-bordered table-hover table-sm">
+                        <tr>
+                            <th>WHOIS Data</th>
+                        </tr>
+                        <% @whoisData.each do |record| %>
+                            <tr> 
+                                <td> <%= record %> </td>
+                            </tr>
+                        <% end %>
+                    </table>
+                </div>
+            </div>
+        <% if @show_history_whois %>
+            <div class="col-6">
+                <div class="mt-5">
+                    <table class="table align-middle table-dark table-bordered table-hover table-sm">
+                        <tr>
+                            <th>Historical DNS</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        <% end %>
         </div>
-        
     </div>
 </div>
