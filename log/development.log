@@ -6933,3 +6933,54 @@ Processing by MainController#index as HTML
 Completed 200 OK in 53ms (Views: 46.2ms | Allocations: 5904)
 
 
+Started POST "/lookup" for 127.0.0.1 at 2022-06-01 21:52:35 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (3.1ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:68:in `updateDNSRecordsToDatabase'
+  [1m[36mCACHE DnsLookup Load (0.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1288)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3771)
+Completed 200 OK in 963ms (Views: 14.2ms | ActiveRecord: 59.0ms | Allocations: 24322)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-06-01 21:53:09 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (1.1ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:68:in `updateDNSRecordsToDatabase'
+  [1m[36mCACHE DnsLookup Load (0.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1224)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3699)
+Completed 200 OK in 794ms (Views: 18.5ms | ActiveRecord: 1.2ms | Allocations: 13411)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-06-01 21:53:26 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (1.2ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:68:in `updateDNSRecordsToDatabase'
+  [1m[36mCACHE DnsLookup Load (0.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1224)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 3697)
+Completed 200 OK in 788ms (Views: 16.8ms | ActiveRecord: 1.2ms | Allocations: 13387)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-01 21:54:01 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2520)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 4605)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 4939)
+
+
