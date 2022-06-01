@@ -1,12 +1,12 @@
 
 <div class="container-fluid">
     <div class="row pt-5">
-        <div class="col-6 offset-3 text-center p-5 border border-1 border-secondary border-opacity-50">
+        <div class="col-xl-6 offset-xl-3 col-10 offset-1 text-center p-5 border border-1 border-secondary border-opacity-50">
             <h1 class=" w-100 fw-light text-light">DNS Lookup</h1>
             <div class="text-light">
                 <p class="py-1">This tool will complete a full DNS lookup on the provided domain. </p>
             </div>
-            <div class="px-5">
+            <div class="px-md-5">
                 <%= form_with url: '/lookup', method: :post, local: true do |form| %>
                     <% form.label :query, "Domain Name:", class:"form-label" %>
                     <%= form.text_field :domain, class:"form-control", placeholder: "eg. apple.com.au", spellcheck: false %>
