@@ -6984,3 +6984,45 @@ Processing by MainController#index as HTML
 Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 4939)
 
 
+Started GET "/" for 127.0.0.1 at 2022-06-11 13:58:27 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3450)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 35041)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 0.0ms | Allocations: 38232)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-06-11 13:58:47 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"", "commit"=>"Go"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.0ms | Allocations: 1532)
+
+
+Started GET "/" for 127.0.0.1 at 2022-06-11 13:58:47 +1000
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 2186)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 4367)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 4676)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-06-11 13:58:51 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"ottoit.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (2.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "ottoit.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:68:in `updateDNSRecordsToDatabase'
+  [1m[36mCACHE DnsLookup Load (0.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "ottoit.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1195)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 3389)
+Completed 200 OK in 1242ms (Views: 13.2ms | ActiveRecord: 15.6ms | Allocations: 20560)
+
+

@@ -11,7 +11,7 @@
                     <% form.label :query, "Domain Name:", class:"form-label" %>
                     <%= form.text_field :domain, class:"form-control", placeholder: "eg. apple.com.au", spellcheck: false %>
                     <% form.select :type, ["All", "A", "MX", "NS", "TXT", "SOA"], class:"form-select form-select-sm" %>
-                    <%= form.submit "Go", class: "btn btn-primary mt-3", style: "width: 100px" %>
+                    <%= form.submit "Go", class: "btn btn-primary mt-3", style: "width: 100px", id:"submit" %>
                 <% end %>
             </div>
             <% flash.each do |type, msg| %>
