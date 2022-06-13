@@ -31,10 +31,5 @@ services:
     hostname: dns-tool-web
     restart: always
 
-networks:
-  default:
-    external:
-      name: myNetwork
-
 volumes:
   dbdata:

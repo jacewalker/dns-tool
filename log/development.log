@@ -7341,3 +7341,42 @@ Processing by MainController#index as HTML
 Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4760)
 
 
+Started GET "/" for 127.0.0.1 at 2022-06-13 20:09:49 +1000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3627)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 40951)
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 0.0ms | Allocations: 44142)
+
+
+Started POST "/lookup" for 127.0.0.1 at 2022-06-13 20:09:53 +1000
+Processing by MainController#lookup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "domain"=>"apple.com.au", "commit"=>"Go"}
+  [1m[36mDnsLookup Load (3.6ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:68:in `updateDNSRecordsToDatabase'
+  [1m[36mCACHE DnsLookup Load (0.0ms)[0m  [1m[34mSELECT "dns_lookups".* FROM "dns_lookups" WHERE "dns_lookups"."domain" = $1 LIMIT $2[0m  [["domain", "apple.com.au"], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:71:in `updateDNSRecordsToDatabase'
+  Rendering layout layouts/application.html.erb
+  Rendering main/lookup.html.erb within layouts/application
+  Rendered main/lookup.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1269)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3465)
+Completed 200 OK in 940ms (Views: 8.4ms | ActiveRecord: 21.4ms | Allocations: 21276)
+
+
+Started GET "/" for 172.26.0.1 at 2022-06-13 10:11:21 +0000
+Cannot render console from 172.26.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 48.6ms | Allocations: 3886)
+Importmap skipped missing path: turbo.min.js
+Importmap skipped missing path: turbo.min.js
+  Rendered layout layouts/application.html.erb (Duration: 1715.5ms | Allocations: 85109)
+Completed 200 OK in 1801ms (Views: 1742.0ms | ActiveRecord: 0.0ms | Allocations: 89522)
+
+
