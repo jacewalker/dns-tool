@@ -1,16 +1,37 @@
-# syntax=docker/dockerfile:1
-FROM ruby:latest
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-WORKDIR /myapp
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+FROM ruby:3.1.2-alpine
+
+RUN apk add --update --virtual \
+  runtime-deps \
+  postgresql-client \
+  build-base \
+  libxml2-dev \
+  libxslt-dev \
+  nodejs \
+  yarn \
+  libffi-dev \
+  readline \
+  build-base \
+  postgresql-dev \
+  sqlite-dev \
+  libc-dev \
+  linux-headers \
+  readline-dev \
+  file \
+  imagemagick \
+  git \
+  tzdata \
+  && rm -rf /var/cache/apk/*
+
+RUN apk add --no-cache gcompat
+
+WORKDIR /app
+COPY . /app/
+
+ENV BUNDLE_PATH /gems
+RUN yarn install
 RUN bundle install
 
-# Add a script to be executed every time the container starts.
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
-EXPOSE 3000
+ENTRYPOINT ["bin/rails"]
+CMD ["s", "-b", "0.0.0.0"]
 
-# Configure the main process to run when running the image
-CMD ["rails", "server", "-b", "0.0.0.0"]
+EXPOSE 3000
