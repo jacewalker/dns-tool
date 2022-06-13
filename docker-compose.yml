@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   db:
+    container_name: dns-tool-db
     image: postgres:latest
     environment:
       - POSTGRES_PASSWORD=password
@@ -15,6 +16,7 @@ services:
       - "6379:6379"
 
   web:
+    container_name: dns-tool
     build: .
     ports:
       - "3000:3000"
