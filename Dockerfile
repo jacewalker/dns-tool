@@ -32,6 +32,8 @@ RUN yarn install
 RUN bundle install
 
 ENTRYPOINT ["bin/rails"]
+CMD ["db:create"]
+CMD ["db:migrate", "RAILS_ENV=development"]
 CMD ["s", "-b", "0.0.0.0"]
 
 EXPOSE 3000
